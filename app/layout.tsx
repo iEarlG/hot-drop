@@ -1,3 +1,4 @@
+import Sidebar from '@/components/Sidebar';
 import './globals.css'
 import { Roboto } from 'next/font/google'
 
@@ -18,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <Sidebar>
+          {children}
+        </Sidebar>
+      </body>
     </html>
   )
 }
