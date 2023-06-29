@@ -2,7 +2,8 @@ import Sidebar from '@/components/Sidebar';
 import './globals.css'
 import { Roboto } from 'next/font/google'
 import SupabaseProvider from '@/providers/SupabaseProvider';
-import UserProvider from '@/hooks/UserProvider';
+import UserProvider from '@/providers/UserProvider';
+import ModalProvider from '@/providers/ModalProvider';
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <SupabaseProvider>
           <UserProvider>
+            <ModalProvider />
             <Sidebar>
               {children}
             </Sidebar>
